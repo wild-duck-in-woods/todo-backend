@@ -23,6 +23,7 @@ const getTasks = async (req, res) => {
 const createTask= async (req, res) => {
 
     try {
+        console.log(req.body.text)
 
         const newTask = await Task.create({
             text: req.body.text,
@@ -70,9 +71,9 @@ const updateTask= async (req, res) => {
                 ...req.body
             },
 
-            // {
-            //     new: true
-            // }
+            {
+                new: true
+            }
         )
 
         res.json(updatedTask)
