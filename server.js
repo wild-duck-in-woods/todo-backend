@@ -13,7 +13,12 @@ const authRoutes = require("./routes/authRoutes")
 const taskRoutes = require("./routes/taskRoutes")
 const PORT = process.env.PORT || 5000
 
-app.use(cors())
+//app.use(cors())
+app.use(cors({
+    origin: [
+        "http://localhost:5173"
+    ]
+}))
 app.use(express.json())
 app.use(authRoutes)
 app.use(taskRoutes)
